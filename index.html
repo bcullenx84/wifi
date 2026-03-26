@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarTrawler Guest Wi-Fi</title>
+<style>
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #0f0b2e;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .card {
+        background: #1a1445;
+        padding: 30px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 400px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .label {
+        color: #3FE0C5;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .value {
+        font-size: 18px;
+        margin-top: 5px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        background: #3FE0C5;
+        color: #0f0b2e;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    button:active {
+        transform: scale(0.97);
+    }
+
+    .hint {
+        margin-top: 20px;
+        font-size: 14px;
+        opacity: 0.7;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Connect to CarTrawler Wi-Fi</h1>
+
+    <div class="label">SSID</div>
+    <div class="value">Car Trawler Guest</div>
+
+    <div class="label">Password</div>
+    <div class="value" id="password">TravelConnect26</div>
+
+    <button onclick="copyPassword()">Copy Password</button>
+
+    <div class="hint">
+        Open Wi-Fi settings and paste the password
+    </div>
+</div>
+
+<script>
+function copyPassword() {
+    const password = document.getElementById("password").innerText;
+    navigator.clipboard.writeText(password);
+    alert("Password copied");
+}
+</script>
+
+</body>
+</html>
